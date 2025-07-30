@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Nutricionista Daiany Fernandes | Consultas online, planos alimentares e eBooks para celíacos, diabéticos e mais.">
+    <title>Nutricionista Daiany Fernandes | Consultas e eBooks Personalizados</title>
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <!-- Adicionando Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Adicionando ScrollReveal.js -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', Arial, sans-serif;
+        }
+
+        body {
+            background-color: #F8F8F8;
+            color: #333333;
+            line-height: 1.6;
+        }
+
+        /* HEADER COM IMAGEM EM TELA CHEIA AJUSTADA */
+        .header-container {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            height: 100vh;
+            max-height: 800px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1 );
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .header-img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            object-position: center;
+            display: block;
+        }
+
+        /* BOTÕES FLUTUANTES */
+        .float-buttons {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .float-btn {
+            display: flex;
+            align-items: center;
+            padding: 15px 20px;
+            border-radius: 50px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .float-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .float-btn i {
+            font-size: 24px;
+            margin-right: 10px;
+        }
+
+        .whatsapp-btn {
+            background: #25D366;
+            color: white;
+        }
+
+        .instagram-btn {
+            background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
+            color: white;
+        }
+
+        .container {
+            max-width: 1500px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .section {
+            background-color: white;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            border-left: 4px solid #9ACD32;
+        }
+
+        .section h2 {
+            color: #6B8E23;
+            margin-bottom: 1.5rem;
+            font-size: 2.2rem;
+            font-family: 'Amatic SC', cursive;
+            font-weight: 700;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 3px;
+            background-color: #FFA500;
+        }
+
+        .section p {
+            margin-bottom: 1rem;
+            font-family: 'Roboto', sans-serif;
+            color: #555555;
+        }
+
+        /* LAYOUT DAS SEÇÕES COM IMAGEM E TEXTO */
+        .content-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .content-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .content-image {
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+        }
+
+        .content-image img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .alternate-layout {
+            flex-direction: row-reverse;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #9ACD32;
+            color: white;
+            padding: 0.8rem 1.8rem;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            margin-top: 1rem;
+        }
+
+        .btn:hover {
+            background-color: #7CB342;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }
+
+        .btn:active {
+            transform: translateY(0);
+        }
+
+        .plans, .pricing, .testimonials, .self-service {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+
+        .plan-card, .price-card, .testimonial-card, .service-card {
+            flex: 1;
+            min-width: 250px;
+            background-color: white;
+            padding: 1.8rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            border: 1px solid #E0E0E0;
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+        }
+
+        .plan-card:hover, .price-card:hover, .testimonial-card:hover, .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-color: #9ACD32;
+        }
+
+        .plan-card h3, .price-card h3, .testimonial-card h3, .service-card h3 {
+            color: #6B8E23;
+            margin-bottom: 1.2rem;
+            font-family: 'Amatic SC', cursive;
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        /* SEÇÃO ÁREAS DE ATUAÇÃO */
+        .areas-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .areas-list {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .areas-image {
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+        }
+
+        .areas-image img {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .bonus {
+            font-size: 0.9rem;
+            color: #FFA500;
+            margin-top: 0.8rem;
+            font-weight: 500;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background-color: #6B8E23;
+            color: white;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            margin-top: 2rem;
+        }
+
+        footer p {
+            margin-bottom: 1rem;
+        }
+
+        footer .social-btns {
+            margin-top: 1rem;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        footer .social-btns .btn {
+            margin: 0;
+            padding: 0.6rem 1.5rem;
+            font-size: 0.9rem;
+            background-color: rgba(255,255,255,0.2);
+            backdrop-filter: blur(5px);
+        }
+
+        footer .social-btns .btn:hover {
+            background-color: rgba(255,255,255,0.3);
+        }
+
+        .receive-section {
+            display: flex;
+            justify-content: space-between;
+            gap: 2rem;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .receive-content {
+            flex: 2;
+            min-width: 300px;
+        }
+
+        .receive-image {
+            flex: 1;
+            min-width: 300px;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        .receive-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .receive-image img:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .contact-location {
+            display: flex;
+            justify-content: space-between;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-section {
+            flex: 1;
+            min-width: 300px;
+            max-width: 400px;
+            padding: 1.5rem;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        form label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            font-size: 0.9rem;
+            color: #555555;
+        }
+
+        form input, form textarea {
+            width: 100%;
+            padding: 0.8rem;
+            margin-bottom: 1rem;
+            border: 1px solid #E0E0E0;
+            border-radius: 6px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        form input:focus, form textarea:focus {
+            outline: none;
+            border-color: #9ACD32;
+            box-shadow: 0 0 0 2px rgba(154, 205, 50, 0.2);
+        }
+
+        form textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        .contact-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-buttons .btn {
+            padding: 0.8rem 1.5rem;
+            font-size: 0.9rem;
+            flex: 1;
+            min-width: 150px;
+        }
+
+        .location-section {
+            flex: 1;
+            min-width: 300px;
+            max-width: 600px;
+            padding: 1.5rem;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .location-section h2 {
+            color: #6B8E23;
+            margin-bottom: 1.5rem;
+            font-size: 2.2rem;
+            font-family: 'Amatic SC', cursive;
+            font-weight: 700;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .location-section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 3px;
+            background-color: #FFA500;
+        }
+
+        .location-section iframe {
+            width: 100%;
+            height: 350px;
+            border: 0;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 1rem;
+        }
+
+        ul li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.8rem;
+            color: #555555;
+        }
+
+        ul li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: #9ACD32;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                height: 70vh;
+                max-height: 500px;
+            }
+
+            .plans, .pricing, .testimonials, .self-service {
+                flex-direction: column;
+            }
+
+            .contact-location, .receive-section, .content-section, .areas-section {
+                flex-direction: column;
+            }
+
+            .content-image, .areas-image {
+                order: -1;
+            }
+
+            .alternate-layout {
+                flex-direction: column;
+            }
+
+            .contact-section, .location-section, .receive-content, .receive-image {
+                max-width: 100%;
+            }
+
+            .section h2 {
+                font-size: 1.8rem;
+            }
+
+            .plan-card h3, .price-card h3, .testimonial-card h3, .service-card h3 {
+                font-size: 1.6rem;
+            }
+
+            .float-buttons {
+                bottom: 20px;
+                right: 20px;
+            }
+
+            .float-btn {
+                padding: 12px 15px;
+                font-size: 0.9rem;
+            }
+
+            .float-btn i {
+                font-size: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header-container {
+                height: 50vh;
+                max-height: 400px;
+            }
+
+            .float-btn span {
+                display: none;
+            }
+
+            .float-btn i {
+                margin-right: 0;
+                font-size: 22px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER COM IMAGEM EM TELA CHEIA AJUSTADA -->
+    <div class="header-container">
+        <img src="site nutricionista.png" alt="Daiany Fernandes Nutricionista" class="header-img">
+    </div>
+
+    <div class="container">
+        <!-- Seção Minha Abordagem -->
+        <div class="section reveal">
+            <h2>Minha Abordagem</h2>
+            <div class="content-section">
+                <div class="content-image">
+                    <img src="image00024.jpeg" alt="Foto de Daiany Fernandes em consulta">
+                </div>
+                <div class="content-text">
+                    <p>Sou Daiany, Nutricionista Clínica comportamental dedicada a integrar o melhor da nutrição para promover uma transformação completa na sua saúde. Acredito que uma alimentação equilibrada não apenas nutre o corpo, mas também fortalece a mente e impulsiona o desempenho atlético.</p>
+                    <p>Na minha abordagem, vou além da dieta tradicional. Foco no comportamento alimentar, entendendo que cada pessoa é única e merece um plano nutricional que se alinhe às suas metas e estilo de vida. Juntos, trabalharemos na construção de hábitos saudáveis, estabelecendo metas realistas e celebrando cada conquista ao longo do caminho.</p>
+                    <a href="https://wa.me/5541996009717?text=Olá,%20gostaria%20de%20agendar%20uma%20consulta!" class="btn" aria-label="Agendar consulta via WhatsApp">Agendar Consulta</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Seção Sobre Mim Unificada (mantendo layout original ) -->
+        <div class="section reveal">
+            <h2>Sobre Mim</h2>
+            <div class="content-section alternate-layout">
+                <div class="content-image">
+                    <img src="4(1).png" alt="Minha transformação pessoal">
+                </div>
+                <div class="content-text">
+                    <p>Eu já estive no seu lugar, mas antes de começar, quero te contar um pedacinho da minha história, porque eu sei como é estar onde você está agora. Eu já fui obesa, já passei por momentos bem difíceis na vida e carreguei traumas que, por muito tempo, eu tentei "resolver" com comida.</p>
+                    <p>Depois da minha gestação, meu corpo mudou, os quilos vieram e eu me vi perdida, tentando de tudo para emagrecer. Fiz dietas malucas – aquelas que prometem milagres, sabe? Me matava de tanto fazer aeróbicos, contava cada caloria, mas nada parecia funcionar de verdade. Por quê? Porque eu estava focada só no externo – nas regras, nos números, nos exercícios – e não no que realmente precisava mudar: meu comportamento, minha relação com a comida e comigo mesma.</p>
+                </div>
+            </div>
+            
+            <div class="content-section" style="margin-top: 2rem;">
+                <div class="content-image">
+                    <img src="2.png" alt="Minha jornada de transformação">
+                </div>
+                <div class="content-text">
+                    <p>Eu caía no ciclo de culpa, comia por ansiedade e achava que nunca ia conseguir. Mas um dia, cansei de lutar contra mim mesma e decidi tentar algo diferente: mudar meus hábitos, de dentro para fora.</p>
+                    <p>Foi aí que tudo mudou. Aprendi a me alimentar de um jeito que nutre o corpo e a alma, sem dietas restritivas, sem culpa, sem terrorismo nutricional. E foi assim que eu emagreci, de forma saudável e sustentável, e me tornei uma nutricionista apaixonada por ajudar outras pessoas a encontrarem esse mesmo caminho.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Seção Áreas de Atuação -->
+        <div class="section reveal">
+            <h2>Áreas de Atuação</h2>
+            <div class="areas-section">
+                <div class="areas-list">
+                    <ul>
+                        <li>Emagrecimento e Reeducação Alimentar</li>
+                        <li>Nutrição Esportiva</li>
+                        <li>Doenças Crônicas (Diabetes, Hipertensão, Dislipidemias)</li>
+                        <li>Saúde Intestinal</li>
+                        <li>Alergias e Intolerâncias Alimentares</li>
+                        <li>Nutrição na Gestação e Amamentação</li>
+                        <li>Transtornos Alimentares (em conjunto com equipe multidisciplinar)</li>
+                    </ul>
+                </div>
+                <div class="areas-image">
+                    <img src="3(1).png" alt="Áreas de atuação da nutricionista">
+                </div>
+            </div>
+        </div>
+
+        <!-- Seção Planos de Consulta -->
+        <div class="section reveal">
+            <h2>Planos de Consulta</h2>
+            <div class="plans">
+                <div class="plan-card">
+                    <h3>Consulta Online Individual</h3>
+                    <p>Atendimento personalizado e flexível, ideal para quem busca acompanhamento nutricional de qualquer lugar.</p>
+                    <ul>
+                        <li>Avaliação completa</li>
+                        <li>Plano alimentar individualizado</li>
+                        <li>Suporte via WhatsApp</li>
+                        <li>Material de apoio exclusivo</li>
+                    </ul>
+                    <a href="https://wa.me/5541996009717?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20a%20Consulta%20Online%20Individual!" class="btn" aria-label="Saber mais sobre Consulta Online Individual">Saber Mais</a>
+                </div>
+                <div class="plan-card">
+                    <h3>Acompanhamento Semestral</h3>
+                    <p>Programa de 6 meses com consultas regulares para resultados duradouros e suporte contínuo.</p>
+                    <ul>
+                        <li>6 consultas (uma a cada mês)</li>
+                        <li>Ajustes no plano alimentar</li>
+                        <li>Análise de evolução</li>
+                        <li>Material de apoio exclusivo</li>
+                        <li>Suporte via whatsapp</li>
+                    </ul>
+                    <a href="https://wa.me/5541996009717?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20o%20Acompanhamento%20Trimestral!" class="btn" aria-label="Saber mais sobre Acompanhamento Trimestral">Saber Mais</a>
+                </div>
+                <div class="plan-card">
+                    <h3>Consulta Avulsa</h3>
+                    <p>Atendimento na clínica para uma experiência mais próxima e detalhada.</p>
+                    <ul>
+                       <li>consulta e retorno em 50 dias</li>
+                        <li>Avaliação física completa</li>
+                        <li>Plano alimentar personalizado</li>
+                        <li>Orientações práticas</li>
+                        <li>Material exclusivo</li>
+                    </ul>
+                    <a href="https://wa.me/5541996009717?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20a%20Consulta%20Presencial!" class="btn" aria-label="Saber mais sobre Consulta Presencial">Saber Mais</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Seção Autoatendimento -->
+        <div class="section reveal">
+            <h2>Autoatendimento</h2>
+            <div class="self-service">
+                <div class="service-card">
+                    <img src="ebook.JPG" alt="Guia Completo de Supermercado" style="width: 200px; height: 250px; float: left; margin-right: 15px;">
+                    <h3>Guia Completo de Supermercado</h3>
+                    <p style="font-size: 1.1rem; font-weight: bold;">Aprenda a fazer escolhas inteligentes no supermercado e otimize suas compras para uma alimentação mais saudável e econômica.</p>
+                    <p class="bonus" style="font-size: 1.2rem; font-weight: bold; color: #FF4500;">De <span style="text-decoration: line-through;">R$ 67,00</span> por apenas R$ 47,00!</p>
+                    <a href="https://pag.ae/7_UkeZyw4" class="btn" target="_blank" aria-label="Comprar Guia Completo de Supermercado">Comprar Agora</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Seção Depoimentos -->
+        <div class="section reveal">
+            <h2>Depoimentos</h2>
+            <div class="testimonials">
+                <div class="testimonial-card">
+                    <h3>Maria S.</h3>
+                    <p>"A Daiany mudou minha vida! Aprendi a comer de forma saudável sem abrir mão do prazer. Recomendo muito!"</p>
+                </div>
+                <div class="testimonial-card">
+                    <h3>João P.</h3>
+                    <p>"Com o acompanhamento da Daiany, consegui atingir meus objetivos de forma consistente e sem radicalismos."</p>
+                </div>
+                <div class="testimonial-card">
+                    <h3>Ana L.</h3>
+                    <p>"Excelente profissional! Atenciosa, dedicada e com um conhecimento que realmente faz a diferença."</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Seção Contato e Localização -->
+        <div class="section reveal">
+            <h2>Contato</h2>
+            <div class="contact-location">
+                <div class="contact-section">
+                    <p>Entre em contato para agendar sua consulta ou tirar suas dúvidas:</p>
+                    <p><strong>Telefone:</strong> (41 ) 99600-9717</p>
+                    <p><strong>Email:</strong> contato@daianyfernandesnutri.com.br</p>
+                    <div class="contact-buttons">
+                        <a href="https://wa.me/5541996009717?text=Olá,%20gostaria%20de%20agendar%20uma%20consulta!" class="btn" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                        <a href="mailto:contato@daianyfernandesnutri.com.br" class="btn" aria-label="Email"><i class="fas fa-envelope"></i> Email</a>
+                    </div>
+                </div>
+                <!-- Seção de Localização -->
+                <div class="location-section">
+                    <h2>Localização</h2>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3598.2688675741115!2d-49.4007873!3d-25.5959805!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94dd032d19c711a1%3A0x44f21be04cec2b46!2sNutricionista%20-%20Daiany%20Fernandes!5e0!3m2!1spt-BR!2sbr!4v1753884155789!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- BOTÕES FLUTUANTES -->
+    <div class="float-buttons">
+        <a href="https://wa.me/5541996009717?text=Olá,%20gostaria%20de%20agendar%20uma%20consulta!" class="float-btn whatsapp-btn" target="_blank" aria-label="WhatsApp">
+            <i class="fab fa-whatsapp"></i> <span>WhatsApp</span>
+        </a>
+        <a href="https://www.instagram.com/nutri.daianyfernandes?igsh=MTB0MDZyM3gyZ2lsdg==" class="float-btn instagram-btn" target="_blank" aria-label="Instagram">
+            <i class="fab fa-instagram"></i> <span>Instagram</span>
+        </a>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Nutricionista Daiany Fernandes. Todos os direitos reservados.</p>
+        <div class="social-btns">
+            <a href="https://www.instagram.com/nutri.daianyfernandes?igsh=MTB0MDZyM3gyZ2lsdg==" class="btn" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i> Instagram</a>
+            <a href="https://www.facebook.com/daianyfernandesnutri/" class="btn" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i> Facebook</a>
+        </div>
+    </footer>
+
+    <script>
+        ScrollReveal( ).reveal('.reveal', { delay: 200, distance: '50px', origin: 'bottom', interval: 100 });
+    </script>
+</body>
+</html>
