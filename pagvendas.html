@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia para o Mercado - Daiany Fernandes</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #7fbf8c;
+            color: #333;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+        header {
+            background: url('capa pg vendas.png') no-repeat center center;
+            background-size: cover;
+            height: 500px;
+            text-align: center;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .content {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+        .content h2 {
+            color: #2e7d32;
+            font-size: 2em;
+            border-bottom: 2px solid #4caf50;
+            padding-bottom: 10px;
+        }
+        .topics {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .topic {
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 15px;
+            border-left: 4px solid #388e3c;
+            border-radius: 5px;
+        }
+        .daiany-section {
+            display: flex;
+            align-items: center;
+            margin: 20px 0;
+            padding-bottom: 40px;
+            border-bottom: 1px solid #81c784;
+        }
+        .daiany-section img {
+            width: 200px;
+            height: 300px;
+            font-family: unset;
+            border-radius: 0;
+            margin-right: 20px;
+            object-fit: cover;
+        }
+        .daiany-section p {
+            flex: 1;
+        }
+        .video-container {
+            margin: 40px 0;
+            text-align: center;
+        }
+        .video-container iframe {
+            max-width: 100%;
+            height: 500px;
+            border-radius: 10px;
+        }
+        .comments-section {
+            margin: 20px 0;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.7);
+            border-radius: 5px;
+        }
+        .comment {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 10px;
+            margin-bottom: 10px;
+            border-left: 4px solid #2e7d32;
+            border-radius: 5px;
+        }
+        .planner-img {
+            max-width: 50%;
+            height: auto;
+            border: 2px solid #4caf50;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        .floating-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.2em;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            z-index: 100;
+            background-color: #2e7d32;
+        }
+        .floating-button a {
+            color: #fff;
+            text-decoration: none;
+        }
+        .floating-button:hover {
+            background-color: #1b5e20;
+        }
+        .download-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #388e3c;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-left: 20px;
+            vertical-align: middle;
+            font-size: 1.2em;
+            transition: background-color 0.3s;
+        }
+        .download-button:hover {
+            background-color: #2f6b31;
+        }
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            background-color: rgba(255, 255, 255, 0.7);
+            margin-top: 40px;
+        }
+        footer p {
+            margin: 0 0 10px;
+            color: #333;
+        }
+        .social-btns {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #2e7d32;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .btn:hover {
+            background-color: #1b5e20;
+        }
+        .btn i {
+            margin-right: 8px;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" /> <!-- CDN para Font Awesome -->
+    <script src="https://unpkg.com/scrollreveal"></script> <!-- CDN para ScrollReveal -->
+</head>
+<body>
+    <header></header>
+    <div class="content">
+        <h2>O que você vai encontrar no Guia</h2>
+        <div class="topics">
+            <div class="topic">Mais de 30 tópicos para guiá-lo</div>
+            <div class="topic">Acelere seus resultados com escolhas inteligentes</div>
+            <div class="topic">Faça compras rápidas e sem dúvidas</div>
+            <div class="topic">Evite armadilhas das indústrias alimentícias</div>
+            <div class="topic">Economize comprando de forma estratégica</div>
+            <div class="topic">Monte refeições equilibradas na escolha dos produtos</div>
+            <div class="topic">Crie um plano que combine com sua rotina e objetivos</div>
+        </div>
+        <h2>Quem é  Daiany Fernandes</h2>
+        <div class="daiany-section">
+            <img src="Dra_day-removebg-preview.png" alt="Dra. Daiany Fernandes">
+            <p>Nutricionista, mãe e esposa, apaixonada pela nutrição e pelo poder transformador da alimentação. Acredito em uma abordagem humana e real, sem terrorismo alimentar. Com experiência em processos de mudança, criei este guia para ser um apoio prático e acessível.</p>
+        </div>
+        <div class="video-container">
+            <iframe src="WhatsApp Video 2025-08-17 at 00.39.04.mp4" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <h2>O que dizem quem já comprou</h2>
+        <div class="comments-section">
+            <div class="comment">"Mudou minha forma de comprar! Economizei e melhorei minha dieta. Recomendo!" - Ana S.</div>
+            <div class="comment">"O planner grátis foi um diferencial. Agora sigo minhas metas com facilidade!" - João P.</div>
+            <div class="comment">"Simples, prático e eficiente. Resultados incríveis em pouco tempo!" - Maria L.</div>
+        </div>
+        <h2>Planner de Metas!</h2>
+        <img src="planner.jpeg" alt="Planner de Metas" class="planner-img">
+        <a href="https://drive.google.com/file/d/1giUdxtI4r23Tj04ple1f4FCBQxUeFhD5/view?usp=sharing" class="download-button" target="_blank">Baixar Planner</a>
+        <p>Organize sua jornada de saúde com nosso Planner de Metas exclusivo. Baixe agora e comece a transformar sua vida!</p>
+    </div>
+    <div class="floating-button">
+        <a href="https://pag.ae/7_UkeZyw4" target="_blank">Comprar Agora</a>
+    </div>
+    <footer>
+        <p>&copy; 2025 Nutricionista Daiany Fernandes. Todos os direitos reservados.</p>
+        <div class="social-btns">
+            <a href="https://www.instagram.com/nutri.daianyfernandes?igsh=MTB0MDZyM3gyZ2lsdg==" class="btn" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i> Instagram</a>
+            <a href="https://www.facebook.com/share/16ofQNwjHG/?mibextid=wwXIfr" class="btn" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i> Facebook</a>
+            <a href="https://wa.me/5541996009717?text=Olá,%20gostaria%20de%20agendar%20uma%20consulta!" class="btn" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+        </div>
+    </footer>
+    <script>
+        ScrollReveal().reveal('.reveal', { delay: 200, distance: '50px', origin: 'bottom', interval: 100 });
+    </script>
+</body>
+</html>
